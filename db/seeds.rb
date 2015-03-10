@@ -17,6 +17,9 @@
    )
  end
  
+ unique_post = {title: "Unique title", body: "Unique body"}
+ Post.where(unique_post).first_or_create
+
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
