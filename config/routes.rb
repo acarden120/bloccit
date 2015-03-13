@@ -1,5 +1,5 @@
 Bloccit::Application.routes.draw do
-  resources :posts
+  resources :posts #, except: [:show]
 
   get 'about' => 'welcome#about'
 
