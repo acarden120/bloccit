@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  include will_paginate
+  
   def show
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
