@@ -1,17 +1,17 @@
 class SummariesController < ApplicationController
   def new
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
     @summary = Summary.new
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
     @summary = Summary.find(params)
   end
 
    def create
-     @summary = Topic.new(params.require(:summary).permit(:title, :body))
-     @post.summary = @summary
+     summary = Topic.new(params.require(:summary).permit(:title, :body))
+     @post.summary = summary
 
      if @summary.save
        redirect_to @summary, notice: "Summary was saved successfully."
