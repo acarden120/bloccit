@@ -33,6 +33,7 @@
  50.times do
    Post.create!(
      user: users.sample,
+     topic: topics.sample,
      title:  Faker::Lorem.sentence,
      body:   Faker::Lorem.paragraph
    )
@@ -42,11 +43,13 @@
  # Create Comments
  100.times do
    Comment.create!(
+     user: users.sample,
      post: posts.sample,
      body: Faker::Lorem.paragraph
    )
  end
- 
+ comments = Comment.all
+
   # Create an admin user
  admin = User.new(
    name:     'Admin User',
