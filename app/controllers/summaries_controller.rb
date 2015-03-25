@@ -6,18 +6,25 @@ class SummariesController < ApplicationController
 
   def show
     @post = Post.find(params[:post_id])
-    @summary = Summary.find(params)
+    @summary = @post.summary
   end
 
    def create
-     summary = Topic.new(params.require(:summary).permit(:title, :body))
-     @post.summary = summary
-
-     if @summary.save
-       redirect_to @summary, notice: "Summary was saved successfully."
-     else
-       flash[:error] = "Error creating topic. Please try again."
-       render :new
-     end
+    @post = Post.find(params[:post_id])
+    @summary = @post.build_summary(summary_params)
+    if @summary.save
+      flash[:notice]
+      redirect_to post_summary_path(@post.id) 
+    else
+      flash[:error] = "There was an error saving your summary. Please try again."
+      render :new
+    end
    end
+
+  private
+
+  def summary_params
+    params.require(:summary).permit(:description)
+  end
+
 end
