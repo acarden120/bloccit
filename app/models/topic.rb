@@ -1,5 +1,5 @@
 class Topic < ActiveRecord::Base
-  require 'paginate.rb'
+  extend Paginate
   
   has_many :posts
 end
