@@ -14,4 +14,9 @@
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
     <% end %>
   </div>
+      <div>
+        <%= render partial: 'comments/form', locals: {topic: @topic, post: @post, comment: @comment} %>
+    </div>
+<h2><%= @comments.count %> Comments</h2>
+  <%= render @comments %>
 </div>

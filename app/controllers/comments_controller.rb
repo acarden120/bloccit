@@ -3,9 +3,9 @@ class CommentsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find( params[:post_id] )
 
-    @comment = current_user.posts.build(comment_params)
-#    @comment = Comment.new(params.require(:comment).permit(:title, :body))
-#    @post.comment = @comment
+    @comments = @post.comments
+    @comment = current_user.comments.build(comment_params)
+    @comment.post = @post
 
     if @comment.save
       redirect_to @comment, notice: "Summary was saved successfully."
