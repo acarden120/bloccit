@@ -1,8 +1,4 @@
 Bloccit::Application.routes.draw do
-  get "topics/index"
-  get "topics/new"
-  get "topics/show"
-  get "topics/edit"
   devise_for :users
   resources :users, only: [:update]
 
@@ -11,6 +7,8 @@ Bloccit::Application.routes.draw do
    end
 
   get 'about' => 'welcome#about'
+  get 'topics' => 'welcome#topics'
+
 
   root to: 'welcome#index'
 end
