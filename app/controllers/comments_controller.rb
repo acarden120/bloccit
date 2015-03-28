@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   def new
     @topic = Topic.find(params[:topic_id])
     @post = Post.new
-    authorize @post
+    authorize @post # test
   end
 
   def create
@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
 
     @comments = @post.comments
     @comment = current_user.comments.build(comment_params)
+    authorize @comment
     @comment.post = @post
 
     if @comment.save
