@@ -8,21 +8,17 @@ class CommentsController < ApplicationController
     @comment.post = @post
 
     if @comment.save
-      redirect_to @comment, notice: "Summary was saved successfully."
+      redirect_to @comment, notice: "Comment was saved successfully."
     else
-      flash[:error] = "Error creating topic. Please try again."
+      flash[:error] = "Error creating comment. Please try again."
       render :new
     end
   end
 
-  private
+private
 
   def comment_params
-    params.require(:comment).permit(
-      :body,
-      :post_id
-    )
-  end‏
-
+    params.require(:comment).permit(:body)
+  end
 
 end
