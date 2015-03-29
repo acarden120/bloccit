@@ -6,12 +6,11 @@ describe Vote do
         down_vote = Vote(-1)
         expect(down_vote).to eq(true)
 
-        up_vote1 = Vote(-1)
+        up_vote1 = Vote(1)
         expect(up_vote1).to eq(true)
 
         up_vote2 = Vote(4)
         expect(up_vote2.to eq(false)
-
       end
     end
   end
