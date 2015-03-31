@@ -1,5 +1,8 @@
 require 'rails_helper'
 
+include TestFactories
+include Devise::TestHelpers
+
 describe Vote do
   describe "validations" do
     describe "value validation" do

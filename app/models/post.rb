@@ -6,8 +6,6 @@ class Post < ActiveRecord::Base
 
   default_scope { order('rank DESC') }
 
-#  mount_uploader :avatar, AvatarUploader
-
   def up_votes
     votes.where(value: 1).count
   end
