@@ -1,11 +1,10 @@
- require 'rails_helper'
- 
+ require 'rails_helper' 
 
  describe Topic do
    describe "scopes" do
  
      before do 
-       @public_topic = Topic.create # default is public
+       @public_topic = Topic.create
        @private_topic = Topic.create(public: false)
      end
  
