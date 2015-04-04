@@ -7,7 +7,7 @@ class Vote < ActiveRecord::Base
 
   after_save :update_post
 
-  private
+  public
 
   def update_post
     post.update_rank
