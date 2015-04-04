@@ -2,7 +2,7 @@
  
  describe "Sign in flow" do
    
-   include TestFactories
+   include 'test_factories'
  
    describe "successful" do
      it "redirects to the topics index" do
