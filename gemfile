@@ -61,6 +61,8 @@ gem 'mini_magick'
 
 gem 'will_paginate', '~> 3.0.5'
 
+gem 'factory_girl_rails', '~> 4.0'
+
 #gem 'fog'
 
 # Use ActiveModel has_secure_password
