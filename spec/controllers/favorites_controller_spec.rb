@@ -2,7 +2,6 @@
  
  describe FavoritesController do
  
-   include TestFactories
    include Devise::TestHelpers
  
    before do
