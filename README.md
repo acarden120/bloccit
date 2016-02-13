@@ -1,6 +1,2 @@
-## Bloccit: a Reddit replica to teach the fundamentals of web development and Rails.
+## A Reddit replica to teach the fundamentals of web development and Rails.
 
-Link to the heroku-hosted application:
-https://acarden-bloccit.herokuapp.com/
-
-Made with my mentor at [Bloc](http://bloc.io).
